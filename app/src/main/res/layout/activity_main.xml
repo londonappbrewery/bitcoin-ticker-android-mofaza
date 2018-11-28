@@ -8,26 +8,74 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/bkgndColour"
+    android:background="@color/colorPrimary"
     tools:context="com.londonappbrewery.bitcointicker.MainActivity">
 
-    <TextView
+    <LinearLayout
+    android:id="@+id/priceLayout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/logoImage"
+    android:layout_marginTop="30dp"
+    android:gravity="center_vertical|center_horizontal">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:id="@+id/price"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        />
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_default_text"
         android:id="@+id/priceLabel"
         android:textSize="45sp"
         android:textStyle="bold"
-        android:textColor="@color/fontColour"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:textColor="@color/fontColour" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/changeLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/priceLayout"
+        android:gravity="center_vertical|center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year"
+            android:id="@+id/change"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_default_text"
+            android:id="@+id/changeLabel"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="@color/fontColour" />
+    </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:id="@+id/logoImage"
         android:contentDescription="@string/imageview_desc"
-        android:src="@drawable/bitcoin_image"
+        android:src="@drawable/bitcoin_picture"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
@@ -35,7 +83,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/priceLabel"
+        android:layout_below="@+id/priceLayout"
         android:gravity="center_vertical|center_horizontal">
 
         <TextView
@@ -48,7 +96,8 @@
             android:id="@+id/textView"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"/>
 
         <Spinner
             android:layout_width="wrap_content"
